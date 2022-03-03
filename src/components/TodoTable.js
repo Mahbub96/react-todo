@@ -1,5 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import { AiOutlineClose } from "react-icons/ai";
+import { BiEdit } from "react-icons/bi";
 
 function TodoTable({ tasks }) {
   return (
@@ -25,7 +27,9 @@ function TodoTable({ tasks }) {
               <tr key={i}>
                 <td>{task.name} </td>
                 <td>{task.time}</td>
-                <td>delete edit</td>
+                <td>
+                  <AiOutlineClose /> <BiEdit />
+                </td>
               </tr>
             );
           })}

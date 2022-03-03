@@ -7,16 +7,16 @@ function Layout() {
   const [localTask, setLocalTask] = useState({});
   const [task, setTask] = useState([
     {
-      name: "meeting 1",
-      time: "at 10am",
+      name: `meeting 1`,
+      time: `at 10am`,
     },
     {
-      name: "meeting 2",
-      time: "at 1pm",
+      name: `meeting 2`,
+      time: `at 1pm`,
     },
     {
-      name: "meeting 3",
-      time: "at 4pm",
+      name: `meeting 3`,
+      time: `at 4pm`,
     },
   ]);
 
@@ -26,12 +26,7 @@ function Layout() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(localTask, task);
-    let value = [...task];
-    value = localTask;
-    console.log(value);
-    setTask(value);
-    task.push(value);
+    setTask([...task, localTask]);
     console.log(task);
   };
 

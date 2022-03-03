@@ -9,6 +9,7 @@ function TodoTable({ tasks }) {
       style={{
         display: "flex",
         alignItems: "center",
+
         justifyContent: "center",
         marginTop: "20px",
       }}

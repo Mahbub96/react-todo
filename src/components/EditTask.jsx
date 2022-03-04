@@ -1,11 +1,5 @@
-import React from "react";
-
-function EditTask({ task, setTask }) {
-  return (
-    <>
-      <h2>edit everything</h2>
-    </>
-  );
+function EditTask({ targetTask, task, setTask }) {
+  return <>helllo there</>;
 }
 
 export default EditTask;

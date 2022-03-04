@@ -8,11 +8,16 @@ function InputFrom({ setTask, task }) {
   const [todo, setTodo] = useState("");
   const [time, setTime] = useState("");
 
+  const generateId = () => {
+    if (!task.length) return 0;
+    return task[task.length - 1].id + 1;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!todo.length || !time.length) return;
 
-    setTask([...task, { id: task[task.length - 1].id + 1, name: todo, time }]);
+    setTask([...task, { id: generateId(), name: todo, time }]);
 
     setTodo("");
     setTime("");

@@ -1,16 +1,12 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import { AiOutlineClose } from "react-icons/ai";
-import { BiEdit } from "react-icons/bi";
-import EditTask from "./EditTask";
+import { MdOutlineDownloadDone } from "react-icons/md";
 
 function TodoTable({ tasks, setTask }) {
   const handleDelete = (id) => {
-    setTask(tasks.filter((value) => (value.id === id ? null : value)));
+    setTask(tasks.filter((value) => value.id !== id));
   };
-  const handleEdit = (targetTask) => {
-    <EditTask targetTask={targetTask} task={tasks} setTask={setTask} />;
-  };
+
   return (
     <div className="table-container">
       <Table striped bordered hover border="1" cellPadding="8px ">
@@ -30,8 +26,10 @@ function TodoTable({ tasks, setTask }) {
                 <td>{task.name} </td>
                 <td>{task.time}</td>
                 <td>
-                  <AiOutlineClose onClick={() => handleDelete(task.id)} />
-                  <BiEdit onClick={() => handleEdit(task)} />
+                  <MdOutlineDownloadDone
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleDelete(task.id)}
+                  />
                 </td>
               </tr>
             );
